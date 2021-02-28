@@ -11,30 +11,37 @@
 </head>
 
 <body>
-  <main>
+
+  <div class="player--wrapper">
     <section class="player player--0 player--active">
-      <h2 class="name" id="name--0">Player 1</h2>
-      <p class="score" id="score--0">43</p>
+      <div class="global">
+        <h2 class="name" id="name--0">Player 1</h2>
+        <p class="score" id="score--0">43</p>
+      </div>
       <div class="current">
         <p class="current-label">Current</p>
         <p class="current-score" id="current--0">0</p>
       </div>
     </section>
+    <div class="btn--wrapper">
+      <button class="btn btn--new btn--secondary">🔄 New game</button>
+      <img src="dice-5.png" alt="Playing dice" class="dice transparent" />
+      <button class="btn btn--roll btn--secondary">🎲 Roll dice</button>
+      <button class="btn btn--hold btn--secondary">📥 Hold</button>
+    </div>
     <section class="player player--1">
-      <h2 class="name" id="name--1">Player 2</h2>
-      <p class="score" id="score--1">24</p>
+      <div class="global">
+        <h2 class="name" id="name--1">Player 2</h2>
+        <p class="score" id="score--1">24</p>
+      </div>
       <div class="current">
         <p class="current-label">Current</p>
         <p class="current-score" id="current--1">0</p>
       </div>
     </section>
+  </div>
 
-    <img src="dice-5.png" alt="Playing dice" class="dice" />
-    <button class="btn btn--new">🔄 New game</button>
-    <button class="btn btn--roll">🎲 Roll dice</button>
-    <button class="btn btn--hold">📥 Hold</button>
-  </main>
-
+  
   <div class="modal hidden">
     <button class="close-modal">&times;</button>
     <h1>Game Rules 🎲</h1>
@@ -78,7 +85,7 @@
         </div>
       </div>
       <div>
-        <button class="btn btn--play">▶ Play</button>
+        <button class="btn btn--play btn--secondary">▶ Play</button>
       </div>
     </div>
   </div>

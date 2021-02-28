@@ -37,11 +37,6 @@ const closeModal = function () {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
 };
-const getData = function() {
-  name0El.innerHTML = document.querySelector('.player-name-0').value;
-  name1El.innerHTML = document.querySelector('.player-name-1').value;
-  closeModal();
-}
 
 //Initial status
 const reset = function () {
@@ -60,13 +55,22 @@ const reset = function () {
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
 
-  diceEl.classList.add("hidden");
+  diceEl.classList.add("transparent");
   
   openModal();
 
   btnCloseModal.addEventListener('click', closeModal);
-  btnPlay.addEventListener('click', getData);
   overlay.addEventListener('click', closeModal);
+  btnPlay.addEventListener('click', function () {
+    let nameInput0 = document.querySelector('.player-name-0').value;
+    let nameInput1 = document.querySelector('.player-name-1').value;
+    
+    name0El.innerHTML = nameInput0 === "" ? "Player 1" : nameInput0;
+    name1El.innerHTML = nameInput1 === "" ? "Player 2" : nameInput1;
+    
+    closeModal();
+
+  });
 };
 
 
@@ -87,7 +91,7 @@ btnRoll.addEventListener('click', function () {
     const dice = Math.trunc(Math.random() * 6) + 1;
 
     // display dice
-    diceEl.classList.remove("hidden");
+    diceEl.classList.remove("transparent");
     diceEl.src = `dice-${dice}.png`;
 
     //check if dice value is 1
@@ -110,10 +114,10 @@ btnHold.addEventListener('click', function () {
     document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
 
     // check if active player is >= 100
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       //finish game
       gameStatus = false;
-      diceEl.classList.add("hidden");
+      diceEl.classList.add("transparent");
       document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
       document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
     } else {
