@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://kit.fontawesome.com/79fec93140.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css" />
   <title>Pig Game</title>
 </head>
@@ -57,11 +58,29 @@
       all of their points from this turn. If the player chooses to hold, all of the points rolled during that turn are
       added
       to his or her score.
-      </p>
-      <br />
-      <p>
+    </p>
+    <br />
+    <p>
       <strong>You win by being the first player to score 100 or more points.</strong>
     </p>
+    <br />
+    <hr />
+    <h2>Who's playing?</h2>
+    <div class="input">
+      <div class="form">
+        <div>
+          <input type="text" placeholder="Player 1" class="player-name-0">
+          <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" id="player1"></i>
+        </div>
+        <div>
+          <input type="text" placeholder="Player 2" class="player-name-1">
+          <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" id="player2"></i>
+        </div>
+      </div>
+      <div>
+        <button class="btn btn--play">▶ Play</button>
+      </div>
+    </div>
   </div>
   <div class="overlay hidden"></div>
   <script src="script.js"></script>
