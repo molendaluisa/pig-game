@@ -16,10 +16,24 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
+//modal
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
 
 //global variables
-let scores, currentScor, activePlayer, gameStatus;
+let scores, currentScore, activePlayer, gameStatus;
 
+//helpers
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
 
 //Initial status
 const reset = function () {
@@ -39,6 +53,11 @@ const reset = function () {
   player1El.classList.remove('player--active');
 
   diceEl.classList.add("hidden");
+  
+  openModal();
+
+  btnCloseModal.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
 };
 
 
@@ -98,3 +117,6 @@ btnHold.addEventListener('click', function () {
 btnNew.addEventListener('click', reset);
 
 reset();
+
+
+// Modal code

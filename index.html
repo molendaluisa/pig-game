@@ -33,5 +33,36 @@
     <button class="btn btn--roll">🎲 Roll dice</button>
     <button class="btn btn--hold">📥 Hold</button>
   </main>
+
+  <div class="modal hidden">
+    <button class="close-modal">&times;</button>
+    <h1>Game Rules 🎲</h1>
+    <p>
+      On a turn, a player rolls the die repeatedly, adding up the numbers rolled on the die.
+    </p>
+    <br />
+    <p>
+      However, if a player rolls a 1, the player's turn is over and any points they have
+      accumulated during this turn are forfeited.
+    </p>
+    <br />
+    <p>
+      Rolling a 1 doesn't wipe out your entire score from previous turns, just the
+      total earned during that particular roll.
+    </p>
+    <br />
+    <p>
+      A player can also choose to hold (stop rolling the die) if they do not want to take a chance of rolling a 1 and
+      losing
+      all of their points from this turn. If the player chooses to hold, all of the points rolled during that turn are
+      added
+      to his or her score.
+      </p>
+      <br />
+      <p>
+      <strong>You win by being the first player to score 100 or more points.</strong>
+    </p>
+  </div>
+  <div class="overlay hidden"></div>
   <script src="script.js"></script>
 </body>
